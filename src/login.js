@@ -24,6 +24,14 @@ function LoggingPage() {
     // Here you can perform your signup logic, like sending data to a server, etc.
     console.log('Signing up with Username:', username);
     // Reset the form after submission
+    
+    try {
+        const result = UserModel.register(username);
+        console.log("connected!", result);
+      } catch (error) {
+        console.error('Error connecting:', error);
+      }
+
     setUsername('');
   };
 
